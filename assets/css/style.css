@@ -1,7 +1,15 @@
 body{
-    background: blue;
+    background: white;
 }
 
 #breweries-go-here .brewery-div    {
     border: solid black 1px;
+}
+#map {
+    margin: auto;
+    height: 300px;
+    width: 300px;
+}
+.brw-btn    {
+    color: red;
 }
