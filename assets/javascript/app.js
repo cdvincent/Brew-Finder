@@ -8,6 +8,7 @@ $(document).ready(function () {
     $("#add-brew").on("click", function (event) {
         event.preventDefault();
         $("#breweries-go-here").empty();
+        $("#map").empty();
         let userName = "&by_name=" + $("#brewery-name").val().trim();
         let userState = "&by_state=" + $("#state").val().trim();
         let userCity = "&by_city=" + $("#city").val().trim();
@@ -43,6 +44,13 @@ $(document).ready(function () {
                 url: queryURL + userName + userState + userCity,
                 method: "GET"
             }).then(function (response) {
+                if (Array.isArray(response) && !response.length) {
+                    alert("Search term not found");
+                    return false;
+                } 
+    
+    
+    
 
                 breweries = response;
                 console.log(breweries);
@@ -54,7 +62,7 @@ $(document).ready(function () {
 
 
                     let brewDiv = $("<div>");
-
+                    let mapDiv = $("<div>")
                     let name = $("<button>").text(response[i].name);
                     name.attr("data-lat", response[i].latitude);
                     name.attr("data-long", response[i].longitude);
@@ -80,6 +88,7 @@ $(document).ready(function () {
                     brewDiv.append(lat);
                     brewDiv.append(long);
                     $("#breweries-go-here").append(brewDiv);
+                    $("#breweries-go-here").append(mapDiv);
                     let platform = new H.service.Platform({
                         "app_id": "dyibLlBU2QNaCv7xikm2",
                         "apikey": "5nf_6CsIndRsth2qYd4s86AwOQs8XMDgUf7vOLU09Ls"
@@ -105,8 +114,6 @@ $(document).ready(function () {
                         marker = new H.map.Marker(coords, {icon:icon});
                     map.addObject(marker);
                     map.setCenter(coords);
-                        
-                };
 
             });
 
