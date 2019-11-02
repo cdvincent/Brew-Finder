@@ -12,7 +12,11 @@ $(document).ready(function () {
         let userName = "&by_name=" + $("#brewery-name").val().trim();
         let userState = "&by_state=" + $("#state").val().trim();
         let userCity = "&by_city=" + $("#city").val().trim();
-        
+
+        $("#brewery-name").val("");
+        $("#state").val("");
+        $("#city").val("");
+
         let queryURL = "https://api.openbrewerydb.org/breweries?per_page=10";
         if (userName === "&by_name="){
             userName = "";
