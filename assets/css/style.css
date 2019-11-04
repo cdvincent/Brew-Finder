@@ -5,11 +5,30 @@ body{
 #breweries-go-here .brewery-div    {
     border: solid black 1px;
 }
+#map    {
+height: 250px;
+width: 250px;
+margin: 20px;
+border: solid black 1px;
+padding: 10px;
 
-#map {
-    height: 300px;
-    width: 300px;
 }
 .brw-btn    {
-    color: red;
+color: red;
+}
+
+#breweries-go-here  {
+margin-top: 5px;
+margin-bottom: 5px;
+
+}
+.brewery-div    {
+border: solid black 1px;
+padding: 5px;
+margin: 5px;
+}
+.map-div    {
+border: solid black 1px;
+padding: 5px;
+height: auto;
 }
