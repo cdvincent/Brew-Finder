@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 
                 let brewDiv = $("<div>");
-                let mapDiv = $("<div id='map'>")
+                let mapDiv = $("<div id='map'" + i + ">")
                 let name = $("<button>").text(response[i].name);
                 name.attr("data-lat", response[i].latitude);
                 name.attr("data-long", response[i].longitude);
@@ -77,9 +77,10 @@ $(document).ready(function () {
                 let zip = $("<p>").text(response[i].postal_code);
                 let website = $("<p>").text(response[i].website_url);
                 let phone = $("<p>").text(response[i].phone);
-                let lat = (response[i].latitude);
-                let long = (response[i].longitude);
-                mapDiv.addClass("map-div");
+                let lat = response[i].latitude;
+                let long = response[i].longitude;
+                console.log(lat);
+                console.log(long);
                 brewDiv.addClass("brewery-div");
                 name.addClass("brw-btn");
                 brewDiv.append(name);
@@ -100,13 +101,15 @@ $(document).ready(function () {
                 let maptypes = platform.createDefaultLayers();
 
                 let map = new H.Map(
-                    document.getElementById("map"),
+                    document.getElementById("map" + i),
                     maptypes.vector.normal.map,
                     {
-                        zoom: 15,
+                        zoom: 10,
                         center: { lat: lat, lng: long }
                     }
+                    
                 );
+                
                 const mapEvents = new H.mapevents.MapEvents(map);
                 const behavior = new H.mapevents.Behavior(mapEvents);
                 let svgMarkup = '<svg width="24" height="24" ' +
@@ -120,9 +123,11 @@ $(document).ready(function () {
                     marker = new H.map.Marker(coords, { icon: icon });
                 map.addObject(marker);
                 map.setCenter(coords);
-            }
-        });
+                
+            };
+        });         
+            });
 
-    });
 });
+
 
