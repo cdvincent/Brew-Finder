@@ -2,33 +2,31 @@ body{
     background: white;
 }
 
-#breweries-go-here .brewery-div    {
-    border: solid black 1px;
+.map    {
+height: 300px;
+width: 300px;
+margin: auto;
+padding: 10px
+  
 }
-#map    {
-height: 250px;
-width: 250px;
-margin: 20px;
-border: solid black 1px;
-padding: 10px;
 
-}
-.brw-btn    {
-color: red;
-}
 
 #breweries-go-here  {
-margin-top: 5px;
-margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
 }
-.brewery-div    {
-border: solid black 1px;
-padding: 5px;
-margin: 5px;
+.brewery    {
+  margin: 5px;
 }
 .map-div    {
-border: solid black 1px;
-padding: 5px;
-height: auto;
+  padding: 5px;
+  height: auto;
 }
+.row    {
+   border: solid black 1px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+

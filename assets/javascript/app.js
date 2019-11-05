@@ -1,22 +1,21 @@
 var breweries;
 var lat;
 var long;
-$(document).ready(function () {
 
+$(document).ready(function() {
+    $(".row").hide();
+    $("#add-brew").on("click", function(event) {
 
-
-    $("#add-brew").on("click", function (event) {
         event.preventDefault();
-        $("#breweries-go-here").empty();
-        $("#map").empty();
+        $("#brewery").empty();
+        $(".row").show();
+        
         let userName = "&by_name=" + $("#brewery-name").val().trim();
         let userState = "&by_state=" + $("#state").val().trim();
         let userCity = "&by_city=" + $("#city").val().trim();
-
         $("#brewery-name").val("");
         $("#state").val("");
         $("#city").val("");
-
         let queryURL = "https://api.openbrewerydb.org/breweries?per_page=10";
         if (userName === "&by_name=") {
             userName = "";
@@ -47,29 +46,25 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL + userName + userState + userCity,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
+
+
             if (Array.isArray(response) && !response.length) {
                 alert("Search term not found");
                 return false;
             }
 
-
-
-
             breweries = response;
             console.log(breweries);
-
-
-
             for (let i = 0; i < response.length; i++) {
-
-
-
+                let brewRow = $("<div class='row'>");
                 let brewDiv = $("<div>");
-                let mapDiv = $("<div id='map'" + i + ">")
-                let name = $("<button>").text(response[i].name);
+                let mapDiv = $("<div id='map" + i + "'>")
+                mapDiv.addClass("map");
+                let name = $("<h3>").text(response[i].name);
                 name.attr("data-lat", response[i].latitude);
                 name.attr("data-long", response[i].longitude);
+              
 
                 let brewCity = $("<p>").text(response[i].city);
                 let brewState = $("<p>").text(response[i].state);
@@ -92,8 +87,11 @@ $(document).ready(function () {
                 brewDiv.append(phone);
                 brewDiv.append(lat);
                 brewDiv.append(long);
-                $("#breweries-go-here").append(brewDiv);
-                $("#map-area").append(mapDiv);
+
+                $(brewRow).append(brewDiv);
+                $(brewRow).append(mapDiv);
+                $("#brewery").append(brewRow);
+
                 let platform = new H.service.Platform({
                     "app_id": "dyibLlBU2QNaCv7xikm2",
                     "apikey": "5nf_6CsIndRsth2qYd4s86AwOQs8XMDgUf7vOLU09Ls"
@@ -102,12 +100,10 @@ $(document).ready(function () {
 
                 let map = new H.Map(
                     document.getElementById("map" + i),
-                    maptypes.vector.normal.map,
-                    {
+                    maptypes.vector.normal.map, {
                         zoom: 10,
                         center: { lat: lat, lng: long }
-                    }
-                    
+           
                 );
                 
                 const mapEvents = new H.mapevents.MapEvents(map);
@@ -123,10 +119,11 @@ $(document).ready(function () {
                     marker = new H.map.Marker(coords, { icon: icon });
                 map.addObject(marker);
                 map.setCenter(coords);
-                
+
             };
-        });         
-            });
+        });
+    });
+
 
 });
 
