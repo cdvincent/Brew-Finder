@@ -16,7 +16,7 @@ $(document).ready(function() {
         $("#brewery-name").val("");
         $("#state").val("");
         $("#city").val("");
-        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=10";
+        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=20";
         if (userName === "&by_name=") {
             userName = "";
         }
@@ -70,7 +70,7 @@ $(document).ready(function() {
                 let brewState = $("<p>").text(response[i].state);
                 let address = $("<p>").text(response[i].street);
                 let zip = $("<p>").text(response[i].postal_code);
-                let website = $("<p>").text(response[i].website_url);
+                let website = $("<a href=''>").text(response[i].website_url);
                 let phone = $("<p>").text(response[i].phone);
                 let lat = response[i].latitude;
                 let long = response[i].longitude;
@@ -102,8 +102,8 @@ $(document).ready(function() {
                     document.getElementById("map" + i),
                     maptypes.vector.normal.map, {
                         zoom: 10,
-                        center: { lat: lat, lng: long }
-           
+                        center: { lat: lat, lng: long },
+                    }
                 );
                 
                 const mapEvents = new H.mapevents.MapEvents(map);
