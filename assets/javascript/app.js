@@ -1,9 +1,11 @@
 var breweries;
 var lat;
 var long;
+
 $(document).ready(function() {
     $(".row").hide();
     $("#add-brew").on("click", function(event) {
+
         event.preventDefault();
         $("#brewery").empty();
         $(".row").show();
@@ -40,14 +42,18 @@ $(document).ready(function() {
             alert("Please fill out at least 1 parameter");
             return false;
         }
+
         $.ajax({
             url: queryURL + userName + userState + userCity,
             method: "GET"
         }).then(function(response) {
+
+
             if (Array.isArray(response) && !response.length) {
                 alert("Search term not found");
                 return false;
             }
+
             breweries = response;
             console.log(breweries);
             for (let i = 0; i < response.length; i++) {
@@ -58,6 +64,8 @@ $(document).ready(function() {
                 let name = $("<h3>").text(response[i].name);
                 name.attr("data-lat", response[i].latitude);
                 name.attr("data-long", response[i].longitude);
+              
+
                 let brewCity = $("<p>").text(response[i].city);
                 let brewState = $("<p>").text(response[i].state);
                 let address = $("<p>").text(response[i].street);
@@ -79,20 +87,23 @@ $(document).ready(function() {
                 brewDiv.append(phone);
                 brewDiv.append(lat);
                 brewDiv.append(long);
+
                 $(brewRow).append(brewDiv);
                 $(brewRow).append(mapDiv);
                 $("#brewery").append(brewRow);
+
                 let platform = new H.service.Platform({
                     "app_id": "dyibLlBU2QNaCv7xikm2",
                     "apikey": "5nf_6CsIndRsth2qYd4s86AwOQs8XMDgUf7vOLU09Ls"
                 });
                 let maptypes = platform.createDefaultLayers();
+
                 let map = new H.Map(
                     document.getElementById("map" + i),
                     maptypes.vector.normal.map, {
                         zoom: 10,
                         center: { lat: lat, lng: long }
-                    }
+           
                 );
                 
                 const mapEvents = new H.mapevents.MapEvents(map);
@@ -108,9 +119,12 @@ $(document).ready(function() {
                     marker = new H.map.Marker(coords, { icon: icon });
                 map.addObject(marker);
                 map.setCenter(coords);
+
             };
         });
     });
+
+
 });
 
-    
+
