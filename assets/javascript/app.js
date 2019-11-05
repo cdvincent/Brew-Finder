@@ -84,7 +84,7 @@ $(document).ready(function () {
                 center: { lat: 37, lng: -121 }
             }
         );
-        const geocoderService = platform.getGeocodingServive();
+        const geocoderService = platform.getGeocodingService();
             geocoderService.geocode(
                 {
                     "searchtext": "Los Banos, CA"
@@ -103,3 +103,4 @@ $(document).ready(function () {
 
 
 })
+

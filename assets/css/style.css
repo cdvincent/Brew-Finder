@@ -1,9 +1,21 @@
+h1 {
+    font-family: 'Lobster', cursive;
+    color: goldenrod;
+}
+
 body{
-    background: white;
+    background: goldenrod;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.form-group {
+    color: goldenrod;
 }
 
 #breweries-go-here .brewery-div    {
     border: solid black 1px;
+    background-image: url("../images/beer-wallpaper.jpg");
 }
 #map {
     margin: auto;
@@ -13,3 +25,4 @@ body{
 .brw-btn    {
     color: red;
 }
+
