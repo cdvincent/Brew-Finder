@@ -2,14 +2,31 @@ body{
     background: white;
 }
 
-#breweries-go-here .brewery-div    {
-    border: solid black 1px;
+.map    {
+height: 300px;
+width: 300px;
+margin: auto;
+padding: 10px
+  
 }
-#map {
-    margin: auto;
-    height: 300px;
-    width: 300px;
+
+
+#breweries-go-here  {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
 }
-.brw-btn    {
-    color: red;
+.brewery    {
+  margin: 5px;
 }
+.map-div    {
+  padding: 5px;
+  height: auto;
+}
+.row    {
+   border: solid black 1px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
