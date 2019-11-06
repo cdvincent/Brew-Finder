@@ -17,7 +17,7 @@ $(document).ready(function() {
         $("#brewery-name").val("");
         $("#state").val("");
         $("#city").val("");
-        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=20";
+        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=30";
         if (userName === "&by_name=") {
             userName = "";
         }
