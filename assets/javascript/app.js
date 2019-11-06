@@ -62,36 +62,29 @@ $(document).ready(function() {
                 
                 let brewRow = $("<div class='row'>");
                 let brewDiv = $("<div>");
-                let brewList = $("<ul>");
+                let brewList = $("<ul id='list'>");
                 let mapDiv = $("<div id='map" + i + "'>")
                 mapDiv.addClass("map");
-                let name = $("<h3>").text(response[i].name);
+                let name = $("<h3>").text(response[i].name).appendTo(brewList);
                 name.attr("data-lat", response[i].latitude);
                 name.attr("data-long", response[i].longitude);
                 let lat = response[i].latitude;
                 let long = response[i].longitude;
 
-                let brewCity = $("<li>").text(response[i].city);
-                let brewState = $("<li>").text(response[i].state);
-                address = $("<li>").text(response[i].street);
-                let zip = $("<li>").text(response[i].postal_code);
-                let phone = $("<li>").text(response[i].phone);
-                let website = $("<a href=''>").text(response[i].website_url);
+                let brewCity = $("<li>").text(response[i].city).appendTo(brewList);
+                let brewState = $("<li>").text(response[i].state).appendTo(brewList);
+                address = $("<li>").text(response[i].street).appendTo(brewList);
+                let zip = $("<li>").text(response[i].postal_code).appendTo(brewList);
+                let phone = $("<li>").text(response[i].phone).appendTo(brewList);
+                let website = $("<a href=''>").text(response[i].website_url).appendTo(brewList);
                 
                 
                 console.log(lat);
                 console.log(long);
                 brewDiv.addClass("brewery-div");
                 name.addClass("brw-btn");
-                brewDiv.append(name);
-                brewDiv.append(brewList);
-                brewDiv.append(brewCity);
-                brewDiv.append(brewState);
-                brewDiv.append(address);
-                brewDiv.append(zip);
-                brewDiv.append(phone);
-                brewDiv.append(website);
-
+                
+                $(brewDiv).append(brewList);
                 $(brewRow).append(brewDiv);
                 $(brewRow).append(mapDiv);
                 $("#brewery").append(brewRow);
