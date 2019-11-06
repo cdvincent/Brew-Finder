@@ -3,6 +3,7 @@ var lat;
 var long;
 var address;
 $(document).ready(function() {
+    
     $(".row").hide();
     $("#add-brew").on("click", function(event) {
 
