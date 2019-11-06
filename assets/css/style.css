@@ -19,10 +19,36 @@ body{
 }
 #map {
     margin: auto;
+
     height: 300px;
     width: 300px;
+    margin: auto;
+    padding: 10px;
+
 }
+
+#breweries-go-here  {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.brewery    {
+    margin: 5px;
+}
+<<<<<<< HEAD
 .brw-btn    {
     color: red;
 }
 
+=======
+.map-div    {
+    padding: 5px;
+    height: auto;
+}
+.row    {
+    border: solid black 1px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+>>>>>>> 488cbe3c67c4b524f8a4df35cd38aecffc29e009
