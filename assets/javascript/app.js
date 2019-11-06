@@ -1,7 +1,7 @@
 var breweries;
 var lat;
 var long;
-
+var address;
 $(document).ready(function() {
     $(".row").hide();
     $("#add-brew").on("click", function(event) {
@@ -57,9 +57,8 @@ $(document).ready(function() {
             breweries = response;
             console.log(breweries);
             for (let i = 0; i < response.length; i++) {
-                let lat = response[i].latitude;
-                let long = response[i].longitude;
-                if(lat !== null){
+                 address = response[i].street;
+                if( address !== null){
                 
                 let brewRow = $("<div class='row'>");
                 let brewDiv = $("<div>");
@@ -69,11 +68,12 @@ $(document).ready(function() {
                 let name = $("<h3>").text(response[i].name);
                 name.attr("data-lat", response[i].latitude);
                 name.attr("data-long", response[i].longitude);
-              
+                let lat = response[i].latitude;
+                let long = response[i].longitude;
 
                 let brewCity = $("<li>").text(response[i].city);
                 let brewState = $("<li>").text(response[i].state);
-                let address = $("<li>").text(response[i].street);
+                address = $("<li>").text(response[i].street);
                 let zip = $("<li>").text(response[i].postal_code);
                 let phone = $("<li>").text(response[i].phone);
                 let website = $("<a href=''>").text(response[i].website_url);
