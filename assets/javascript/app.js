@@ -71,12 +71,12 @@ $(document).ready(function() {
                 let lat = response[i].latitude;
                 let long = response[i].longitude;
 
-                let brewCity = $("<li>").text(response[i].city).appendTo(brewList);
-                let brewState = $("<li>").text(response[i].state).appendTo(brewList);
-                address = $("<li>").text(response[i].street).appendTo(brewList);
-                let zip = $("<li>").text(response[i].postal_code).appendTo(brewList);
-                let phone = $("<li>").text(response[i].phone).appendTo(brewList);
-                let website = $("<a href=''>").text(response[i].website_url).appendTo(brewList);
+                $("<li>").text(response[i].city).appendTo(brewList);
+                $("<li>").text(response[i].state).appendTo(brewList);
+                $("<li>").text(response[i].street).appendTo(brewList);
+                $("<li>").text(response[i].postal_code).appendTo(brewList);
+                $("<li>").text(response[i].phone).appendTo(brewList);
+                $("<a href=''>").text(response[i].website_url).appendTo(brewList);
                 
                 
                 console.log(lat);
