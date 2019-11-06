@@ -57,8 +57,13 @@ $(document).ready(function() {
             breweries = response;
             console.log(breweries);
             for (let i = 0; i < response.length; i++) {
+                let lat = response[i].latitude;
+                let long = response[i].longitude;
+                if(lat !== null){
+                
                 let brewRow = $("<div class='row'>");
                 let brewDiv = $("<div>");
+                let brewList = $("<ul>");
                 let mapDiv = $("<div id='map" + i + "'>")
                 mapDiv.addClass("map");
                 let name = $("<h3>").text(response[i].name);
@@ -66,27 +71,26 @@ $(document).ready(function() {
                 name.attr("data-long", response[i].longitude);
               
 
-                let brewCity = $("<p>").text(response[i].city);
-                let brewState = $("<p>").text(response[i].state);
-                let address = $("<p>").text(response[i].street);
-                let zip = $("<p>").text(response[i].postal_code);
+                let brewCity = $("<li>").text(response[i].city);
+                let brewState = $("<li>").text(response[i].state);
+                let address = $("<li>").text(response[i].street);
+                let zip = $("<li>").text(response[i].postal_code);
+                let phone = $("<li>").text(response[i].phone);
                 let website = $("<a href=''>").text(response[i].website_url);
-                let phone = $("<p>").text(response[i].phone);
-                let lat = response[i].latitude;
-                let long = response[i].longitude;
+                
+                
                 console.log(lat);
                 console.log(long);
                 brewDiv.addClass("brewery-div");
                 name.addClass("brw-btn");
                 brewDiv.append(name);
+                brewDiv.append(brewList);
                 brewDiv.append(brewCity);
                 brewDiv.append(brewState);
                 brewDiv.append(address);
                 brewDiv.append(zip);
-                brewDiv.append(website);
                 brewDiv.append(phone);
-                brewDiv.append(lat);
-                brewDiv.append(long);
+                brewDiv.append(website);
 
                 $(brewRow).append(brewDiv);
                 $(brewRow).append(mapDiv);
@@ -119,7 +123,7 @@ $(document).ready(function() {
                     marker = new H.map.Marker(coords, { icon: icon });
                 map.addObject(marker);
                 map.setCenter(coords);
-
+                };
             };
         });
     });
