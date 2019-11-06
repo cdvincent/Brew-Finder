@@ -58,12 +58,13 @@ $(document).ready(function() {
             console.log(breweries);
             for (let i = 0; i < response.length; i++) {
                  address = response[i].street;
-                if( address !== null){
+
+                if (address !== ""){
                 
                 let brewRow = $("<div class='row'>");
+                let mapDiv = $("<div id='map" + i + "'>")
                 let brewDiv = $("<div>");
                 let brewList = $("<ul id='list'>");
-                let mapDiv = $("<div id='map" + i + "'>")
                 mapDiv.addClass("map");
                 let name = $("<h3>").text(response[i].name).appendTo(brewList);
                 name.attr("data-lat", response[i].latitude);
@@ -89,10 +90,14 @@ $(document).ready(function() {
                 $(brewRow).append(mapDiv);
                 $("#brewery").append(brewRow);
 
+
+
                 let platform = new H.service.Platform({
                     "app_id": "dyibLlBU2QNaCv7xikm2",
                     "apikey": "5nf_6CsIndRsth2qYd4s86AwOQs8XMDgUf7vOLU09Ls"
                 });
+
+                if (lat !== null) {
                 let maptypes = platform.createDefaultLayers();
 
                 let map = new H.Map(
@@ -116,6 +121,9 @@ $(document).ready(function() {
                     marker = new H.map.Marker(coords, { icon: icon });
                 map.addObject(marker);
                 map.setCenter(coords);
+                } else {
+                    $("<img class = 'map'>").attr("src", "assets/images/no_map.png").attr("id", "noMap").appendTo(mapDiv);
+                }
                 };
             };
         });
