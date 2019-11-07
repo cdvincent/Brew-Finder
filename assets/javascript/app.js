@@ -40,7 +40,7 @@ $(document).ready(function () {
             userState = "";
         }
         if (userName === "" && userCity === "" && userState === "") {
-            alert("Please fill out at least 1 parameter");
+            $(".modal1").modal();
             return false;
         }
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 
             if (Array.isArray(response) && !response.length) {
-                alert("Search term not found");
+                $(".modal2").modal();
                 return false;
             }
 
