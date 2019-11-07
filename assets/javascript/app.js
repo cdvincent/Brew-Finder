@@ -125,7 +125,6 @@ $(document).ready(function() {
     });
 
 
-<<<<<<< HEAD
     $("#breweries-go-here").on("click",".brw-btn", function () {
         console.log("is this working")
         $("#breweries-go-here").hide();
@@ -164,8 +163,6 @@ $(document).ready(function() {
 
 })
 
-=======
 });
 
 
->>>>>>> 488cbe3c67c4b524f8a4df35cd38aecffc29e009
