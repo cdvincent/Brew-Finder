@@ -89,7 +89,7 @@ body{
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 709px) {
     .row {
         width: 71%;
     }
