@@ -1,6 +1,6 @@
 body{
     background:url(https://i.pinimg.com/originals/d6/c1/49/d6c149e00cc861696f865f016cbe8f7d.jpg);
-    font-family: 'Lobster', cursive;
+    font-family: 'Antic Didone', serif;
     color: white;
     font-size: 20px;
 }
@@ -72,9 +72,9 @@ body{
 .modal1 {
     color: red;
 }
-/* li{
+li{
     list-style-type: none;
-} */
+}
 
 @media (max-width: 980px) {
     .jumbotron {
