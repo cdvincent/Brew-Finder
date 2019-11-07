@@ -2,15 +2,15 @@ var breweries;
 var lat;
 var long;
 var address;
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
     $(".row").hide();
-    $("#add-brew").on("click", function(event) {
+    $("#add-brew").on("click", function (event) {
 
         event.preventDefault();
         $("#brewery").empty();
         $(".row").show();
-        
+
         let userName = "&by_name=" + $("#brewery-name").val().trim();
         let userState = "&by_state=" + $("#state").val().trim();
         let userCity = "&by_city=" + $("#city").val().trim();
@@ -47,7 +47,7 @@ $(document).ready(function() {
         $.ajax({
             url: queryURL + userName + userState + userCity,
             method: "GET"
-        }).then(function(response) {
+        }).then(function (response) {
 
 
             if (Array.isArray(response) && !response.length) {
@@ -58,6 +58,7 @@ $(document).ready(function() {
             breweries = response;
             console.log(breweries);
             for (let i = 0; i < response.length; i++) {
+
                  address = response[i].street;
 
                 if (address !== ""){
@@ -106,25 +107,26 @@ $(document).ready(function() {
                     maptypes.vector.normal.map, {
                         zoom: 10,
                         center: { lat: lat, lng: long },
+               
+                        }
+                        );
+
+                        const mapEvents = new H.mapevents.MapEvents(map);
+                        const behavior = new H.mapevents.Behavior(mapEvents);
+                        let svgMarkup = '<svg width="24" height="24" ' +
+                            'xmlns="http://www.w3.org/2000/svg">' +
+                            '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+                            'height="22" /><text x="12" y="18" font-size="12pt" ' +
+                            'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+                            'fill="white">H</text></svg>';
+                        let icon = new H.map.Icon(svgMarkup),
+                            coords = { lat: lat, lng: long },
+                            marker = new H.map.Marker(coords, { icon: icon });
+                        map.addObject(marker);
+                        map.setCenter(coords);
+                    } else {
+                        $("<img class = 'map'>").attr("src", "assets/images/no_map.png").attr("id", "noMap").appendTo(mapDiv);
                     }
-                );
-                
-                const mapEvents = new H.mapevents.MapEvents(map);
-                const behavior = new H.mapevents.Behavior(mapEvents);
-                let svgMarkup = '<svg width="24" height="24" ' +
-                    'xmlns="http://www.w3.org/2000/svg">' +
-                    '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
-                    'height="22" /><text x="12" y="18" font-size="12pt" ' +
-                    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
-                    'fill="white">H</text></svg>';
-                let icon = new H.map.Icon(svgMarkup),
-                    coords = { lat: lat, lng: long },
-                    marker = new H.map.Marker(coords, { icon: icon });
-                map.addObject(marker);
-                map.setCenter(coords);
-                } else {
-                    $("<img class = 'map'>").attr("src", "assets/images/no_map.png").attr("id", "noMap").appendTo(mapDiv);
-                }
                 };
             };
         });
