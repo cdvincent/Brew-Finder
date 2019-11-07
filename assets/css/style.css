@@ -1,35 +1,101 @@
 body{
-    background: white;
+    background:url(https://i.pinimg.com/originals/d6/c1/49/d6c149e00cc861696f865f016cbe8f7d.jpg);
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 20px;
+}
+
+.main   {
+    margin-top: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbotron {
+    margin-top: 10px;
+    border: solid white 5px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqiriX4Zqb_95Le51B7y-bNJ2XPBBkNMsJaMbKHyP9KGjgtH5&s);
+}
+
+.card {
+    display: inline-flex;
+    margin: 8%;
+    
 }
 
 .map    {
-    height: 300px;
-    width: 300px;
+    height: 230px;
+    width: 230px;
     margin: auto;
-    padding: 10px;
-
+    margin-bottom: 5px;
+    margin-top: 3px;  
 }
-
 #breweries-go-here  {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.brewery    {
-    margin: 5px;
+.flex    {
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
 }
 .map-div    {
-    padding: 5px;
+    margin: auto;
+    /* padding: 5px; */
     height: auto;
+    width: 60%;
+}
+.brewery-div    {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 5px;
 }
 .row    {
-    border: solid black 1px;
+    border: solid white 5px;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqiriX4Zqb_95Le51B7y-bNJ2XPBBkNMsJaMbKHyP9KGjgtH5&s);
+    margin-bottom: 1%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
-li{
+/* li{
     list-style-type: none;
+} */
+
+@media (max-width: 980px) {
+    .jumbotron {
+        width: 71%;
+    }
+    .main {
+        width: 71%;
+    }
+    .row {
+        width: 71%;
+    }
+    
 }
-h1  {
-    text-align: center;
-    text-emphasis: 500;
+
+@media (max-width: 768px) {
+    .row {
+        width: 71%;
+    }
+}
+
+@media (max-width: 640px) {
+    .row {
+        width: 71%;
+    }
+    .brewery-div {
+        width: 100%;
+        margin:auto;
+    }
 }
