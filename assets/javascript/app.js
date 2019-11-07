@@ -17,7 +17,7 @@ $(document).ready(function() {
         $("#brewery-name").val("");
         $("#state").val("");
         $("#city").val("");
-        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=20";
+        let queryURL = "https://api.openbrewerydb.org/breweries?per_page=16";
         if (userName === "&by_name=") {
             userName = "";
         }
@@ -78,7 +78,7 @@ $(document).ready(function() {
                 $("<li>").text(response[i].street).appendTo(brewList);
                 $("<li>").text(response[i].postal_code).appendTo(brewList);
                 $("<li>").text(response[i].phone).appendTo(brewList);
-                $("<a href=''>").text(response[i].website_url).appendTo(brewList);
+                $("<a href=" + response[i].website_url + " " + "target='_blank'" + ">" ).text(response[i].website_url).appendTo(brewList);
                 
                 
                 console.log(lat);
