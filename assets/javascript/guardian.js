@@ -15,6 +15,7 @@ let queryURL = "https://content.guardianapis.com/search?q=breweries&api-key=633a
 
             let pic = response.response.results[i].fields.thumbnail;
             let headline = response.response.results[i].fields.headline;
+            let url = response.response.results[i].webUrl;
             
             
             let carouselItem = $("<div class='carousel-item'>");
@@ -32,9 +33,16 @@ let queryURL = "https://content.guardianapis.com/search?q=breweries&api-key=633a
 
             $(".carousel-inner").append(carouselItem);
          
+            $(".carousel-inner").append(carouselItem);
+
+            carouselItem.on("click", function(){
+ 
+             window.open(url, "_blank");
+            })
+             
+            
         
-        
-        }
+            }
 
         
       
