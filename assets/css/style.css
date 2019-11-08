@@ -9,6 +9,19 @@ body{
     cursor: pointer;
 }
 
+.carousel-inner {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 4%;
+}
+
+.news-headline{
+    margin-left: 5%;
+    font-size: 38px;
+    text-decoration: underline;
+}
+
 .main   {
     margin-top: 10px;
     width: 100%;
