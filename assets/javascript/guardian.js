@@ -29,16 +29,31 @@ let queryURL = "https://content.guardianapis.com/search?q=breweries&api-key=633a
             carouselItem.append(image);
             carouselItem.append(caption);
 
-        
+            let preButton = $("<a class='carousel-control-prev' href='#beer-slides' role='button' data-slide='prev'>")
+            let span = $("<span class='carousel-control-prev-icon' aria-hidden='true'>");
+            let span2 = $("<span class='sr-only'>");
+            preButton.append(span);
+            preButton.append(span2);
+
+            let nxtButton = $("<a class='carousel-control-next' href='#beer-slides' role='button' data-slide='next'>")
+            let nxtSpan = $("<span class='carousel-control-next-icon' aria-hidden='true'>");
+            nxtButton.append(nxtSpan);
+            nxtButton.append(span2);
+
+            carouselItem.append(preButton);
+            carouselItem.append(nxtButton);
 
             $(".carousel-inner").append(carouselItem);
          
-            $(".carousel-inner").append(carouselItem);
+            // $(".carousel-inner").append(carouselItem);
 
-            carouselItem.on("click", function(){
+            caption.on("click", function(){
  
-             window.open(url, "_blank");
+             window.open(url, "_blank")
+                
             })
+
+          
              
             
         
