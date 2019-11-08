@@ -24,8 +24,8 @@ let queryURL = "https://content.guardianapis.com/search?q=breweries&api-key=633a
             image.attr("src", pic);
             image.attr("alt", "artical image");
             let caption = $("<div class='carousel-caption d-none d-md-block'>");
-            let h5 = $("<h5 class='headline'>").text(headline);
-            caption.append(h5);
+            let h2 = $("<h2 class='headline'>").text(headline);
+            caption.append(h2);
             carouselItem.append(image);
             carouselItem.append(caption);
 
