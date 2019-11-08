@@ -113,12 +113,7 @@ $(document).ready(function () {
 
                         const mapEvents = new H.mapevents.MapEvents(map);
                         const behavior = new H.mapevents.Behavior(mapEvents);
-                        let svgMarkup = '<svg width="24" height="24" ' +
-                            'xmlns="http://www.w3.org/2000/svg">' +
-                            '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
-                            'height="22" /><text x="12" y="18" font-size="12pt" ' +
-                            'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
-                            'fill="white">H</text></svg>';
+                        let svgMarkup = 'https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons16x16/beer.png'
                         let icon = new H.map.Icon(svgMarkup),
                             coords = { lat: lat, lng: long },
                             marker = new H.map.Marker(coords, { icon: icon });
