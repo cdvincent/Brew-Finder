@@ -4,6 +4,10 @@ body{
     color: white;
     font-size: 20px;
 }
+    
+.corousel-item {
+    cursor: pointer;
+}
 
 .main   {
     margin-top: 10px;
@@ -66,6 +70,13 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+
+
+.headline {
+    background-color: black;
+    border-radius: 2px;
+}
+
 .modal  {
     color: black;
 }
@@ -74,6 +85,18 @@ body{
 }
 #list {
     list-style-type: none;
+}
+h4  {
+    color: white;
+    
+}  
+.data   {
+    color:  white;
+}
+@media (max-width: 1024px) {
+    .brewery-div{
+        width: 50%;
+    }
 }
 
 #factsText {
@@ -102,6 +125,9 @@ body{
 @media (max-width: 768px) {
     .row {
         width: 71%;
+    }
+    .brewery-div {
+        width: 100%;
     }
 }
 
