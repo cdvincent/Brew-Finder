@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brewery Finder</title>
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+​
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <h1>Brew Finder</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">Learn More<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron card text-center" id="about">
+            <div class="card-header">
+              <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                      <button type="button" class="btn btn-outline-light btn-dark" id="beerTypes">Beer Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-light btn-dark" id="facts">Fun Facts</button>
+                    </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title" id="factsTitle">Fun Facts About Beer</h3>
+              <br>
+                <ul class="card-text" id="factsText">
+                    <li>More Guinness beer is drunk in Nigeria than Ireland.</li>
+                    <li>As a rule of thumb, darker and bitter beers have higher alcohol content.</li>
+                    <li>In the 13th century, some people in Norway would baptize their children with beer.</li>
+                    <li>In France, Germany, Austria, Spain and the Netherlands they serve beer in McDonald's.</li>
+                    <li>There's a brewery in Germany that's almost 1,000 years old. It has been in continuous operation since the year 1040.</li>
+                    <li>Cenosillicaphobia is the fear of an empty beer glass.</li>
+                </ul>
+                <h3 class="card-title" id="beerTypesTitle">Different Types of Beer</h3>
+                <div id="beerButtons">
+                </div>
+                <br>
+                <div id="beerDescription">
+                </div>
+                </div>
+              </div>
+            </div>
+
+</body>
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+<script type="text/javascript" src="assets/javascript/about.js"></script>
+
+</html>
