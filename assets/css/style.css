@@ -71,11 +71,16 @@ body{
     margin-right: auto;
 }
 
+.headline:hover{
+    text-decoration: underline;
+}
 
 .headline {
     background-color: black;
     border-radius: 2px;
+    cursor: pointer;
 }
+
 
 .modal  {
     color: black;
