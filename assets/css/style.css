@@ -72,8 +72,18 @@ body{
 .modal1 {
     color: red;
 }
-li{
+#list {
     list-style-type: none;
+}
+
+#factsText {
+    text-align: left;
+}
+
+#aboutImg {
+    float: left;
+    height: 200px;
+    width: 200px;
 }
 
 @media (max-width: 980px) {
