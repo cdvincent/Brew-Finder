@@ -111,6 +111,12 @@ h4  {
 .data   {
     color:  white;
 }
+
+#about {
+    margin: 20%;
+    margin-top: 40px;
+}
+
 @media (max-width: 1024px) {
     .brewery-div{
         width: 50%;
