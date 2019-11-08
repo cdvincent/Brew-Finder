@@ -116,7 +116,15 @@ h4  {
     margin: 20%;
     margin-top: 40px;
 }
-
+#beerBtn   {
+    margin: 5px;
+}
+#beerTypes  {
+    margin: 5px;
+}
+#facts  {
+    margin: 5px;
+}
 @media (max-width: 1024px) {
     .brewery-div{
         width: 50%;
@@ -153,6 +161,7 @@ h4  {
     .brewery-div {
         width: 100%;
     }
+   
 }
 
 @media (max-width: 709px) {
