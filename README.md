@@ -1,7 +1,7 @@
 <h1>BrewFinder</h1>
 
 <h4>Link</h4>
-<p>https://mc180g.github.io/BrewFinder/index.html</p>
+<p>https://cdvincent.github.io/Brew-Finder/index.html</p>
 
 <h4>Technology used</h4>
 <ul>
