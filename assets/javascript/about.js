@@ -2,6 +2,7 @@ $("#factsTitle").hide();
 $("#factsText").hide();
     
     $("#beerTypes").on("click", function() {
+        $("#beerDescription").empty();
         $("#beerTypesText").show();
         $("#factsTitle").hide();
         $("#beerTypesTitle").show();
@@ -11,6 +12,7 @@ $("#factsText").hide();
     });
 
     $("#facts").on("click", function() {
+        $("#beerDescription").empty();
         $("#factsText").show();
         $("#factsTitle").show();
         $("#beerTypesTitle").hide();
